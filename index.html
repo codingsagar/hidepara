@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hide & Unhide Para</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(to right, cyan, rgb(76, 221, 76));
+        }
+
+        section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            font-family: fantasy;
+            font-size: 3rem;
+            opacity: 0.9;
+        }
+
+        p {
+            font-family: sans-serif;
+            font-size: 1rem;
+            opacity: 0.9;
+            width: 83%;
+            padding: 10px 0;
+            text-align: center;
+            transition: all 1s ease-in-out;
+            word-wrap: break-word;
+            word-break: break-all;
+            line-height: 23px;
+        }
+
+        button {
+            padding: 5px 10px;
+            color: white;
+            background-color: black;
+            border: none;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: 500;
+            margin-top: 25px;
+            border: 2px solid black;
+            border-radius: 10px;
+
+        }
+
+        button:hover {
+            background: linear-gradient(to top, green, blue, orange);
+            border: 2px solid black;
+        }
+        
+        
+        
+    </style>
+</head>
+
+<body>
+    <section>
+        <h1>READ PARAGRAPH</h1>
+        <p id="para">Mouse clicks and drags are composed of both pressing the mouse button down and releasing it back up. If you want
+            to perform these actions separately, call the mouseDown() and mouseUp() functions. They have the same x, y, and button.The mouse scroll wheel can be simulated by calling the scroll() function and passing an integer number of “clicks”to scroll. The amount of scrolling in a “click” varies between platforms. Optionally, integers can be passed for the the x and y keyword arguments to move the mouse cursor before performing the scroll.PyAutoGUI can take screenshots, save them to files, and locate images within the screen. This is useful if you have a
+            small image of, say, a button that needs to be clicked and want to locate it on the screen. These features are provided by the PyScreeze module, which is installed with PyAutoGUI. Screenshot functionality requires the Pillow module. OS X uses the screencapture command, which comes
+            with the operating system. Linux uses the scrot command, which can be installed by running sudo apt-get
+            install scrot. </p>
+            <button onclick="hide()" id="butt">Hide Para</button>
+        </section>
+
+
+    <script>
+        function hide() {
+            var para = document.getElementById("para");
+            var butt = document.getElementById("butt");
+            if (para.style.fontSize != "0px") {
+                para.style.fontSize = "0";
+                butt.innerHTML="Unhide Para";
+            }
+            else {
+                para.style.fontSize = "1rem";
+                butt.innerHTML="Hide Para";
+            }
+
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>
